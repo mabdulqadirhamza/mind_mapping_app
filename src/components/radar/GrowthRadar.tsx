@@ -110,7 +110,7 @@ const GrowthRadar: React.FC = () => {
       });
 
       const link = document.createElement('a');
-      link.download = `growth-radar-${new Date().toISOString().split('T')[0]}.png`;
+      link.download = `360-MindMapr-${new Date().toISOString().split('T')[0]}.png`;
       link.href = dataUrl;
       link.click();
 

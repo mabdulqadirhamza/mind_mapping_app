@@ -66,7 +66,7 @@ const CaptureButton: React.FC<CaptureButtonProps> = ({ flowRef }) => {
       });
 
       const link = document.createElement('a');
-      link.download = `growth-radar-${new Date().toISOString().split('T')[0]}.png`;
+      link.download = `360-MindMap-${new Date().toISOString().split('T')[0]}.png`;
       link.href = dataUrl;
       link.click();
 
