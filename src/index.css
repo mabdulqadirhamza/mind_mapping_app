@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Deep Space Theme - Personal 360 Growth Radar */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 20%;
+    --input: 222 30% 18%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    /* Skill Rating Colors */
+    --rating-beginner: 0 72% 51%;
+    --rating-intermediate: 38 92% 50%;
+    --rating-expert: 142 71% 45%;
+
+    /* Glow Effects */
+    --glow-primary: 199 89% 48%;
+    --glow-accent: 262 83% 58%;
+
+    /* Node Colors */
+    --node-bg: 222 47% 12%;
+    --node-border: 222 30% 25%;
+    --node-hover: 222 47% 16%;
+
+    /* Center Node */
+    --center-gradient-start: 199 89% 48%;
+    --center-gradient-end: 262 83% 58%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 199 89% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .node-glow {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3),
+                0 0 40px hsl(var(--glow-primary) / 0.1);
+  }
+
+  .node-glow-accent {
+    box-shadow: 0 0 20px hsl(var(--glow-accent) / 0.3),
+                0 0 40px hsl(var(--glow-accent) / 0.1);
+  }
+
+  .center-node-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--center-gradient-start)) 0%, 
+      hsl(var(--center-gradient-end)) 100%);
+  }
+
+  .rating-bar-beginner {
+    background: linear-gradient(90deg, 
+      hsl(var(--rating-beginner)) 0%, 
+      hsl(var(--rating-beginner) / 0.7) 100%);
+  }
+
+  .rating-bar-intermediate {
+    background: linear-gradient(90deg, 
+      hsl(var(--rating-intermediate)) 0%, 
+      hsl(var(--rating-intermediate) / 0.8) 100%);
+  }
+
+  .rating-bar-expert {
+    background: linear-gradient(90deg, 
+      hsl(var(--rating-expert)) 0%, 
+      hsl(var(--rating-expert) / 0.8) 100%);
+  }
+
+  .glass-panel {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .deep-space-bg {
+    background: radial-gradient(ellipse at center, 
+      hsl(222 47% 8%) 0%, 
+      hsl(222 47% 4%) 50%,
+      hsl(222 47% 2%) 100%);
+  }
+
+  /* React Flow Controls Styling (v12 uses @xyflow/react; classnames may vary) */
+  .react-flow__controls,
+  .react-flow__panel.react-flow__controls,
+  .xy-flow__controls,
+  .xy-flow__panel.xy-flow__controls {
+    background: hsl(var(--card) / 0.92) !important;
+    border: 1px solid hsl(var(--primary) / 0.5) !important;
+    border-radius: 0.5rem !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 24px hsl(var(--glow-primary) / 0.25), 0 10px 25px -5px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .react-flow__controls button,
+  .xy-flow__controls button {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid hsl(var(--primary) / 0.3) !important;
+    color: hsl(var(--primary)) !important;
+    opacity: 1 !important;
+  }
+
+  .react-flow__controls button:last-child,
+  .xy-flow__controls button:last-child {
+    border-bottom: none !important;
+  }
+
+  .react-flow__controls button:hover,
+  .xy-flow__controls button:hover {
+    background: hsl(var(--primary) / 0.18) !important;
+  }
+
+  .react-flow__controls button svg,
+  .xy-flow__controls button svg {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+
+  .react-flow__controls button svg *,
+  .xy-flow__controls button svg * {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+}
+
+@layer utilities {
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--glow-primary) / 0.5);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
