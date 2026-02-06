@@ -1,4 +1,4 @@
-# 🎯 Personal 360 Growth Radar
+# 🎯 Personal 360 Growth Radar - Loveable
 
 An interactive radial mind map for tracking and visualizing your professional skills. Built with React Flow and D3.js for a beautiful, space-themed skill visualization experience.
 
